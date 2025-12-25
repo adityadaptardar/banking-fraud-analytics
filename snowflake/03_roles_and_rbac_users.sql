@@ -34,3 +34,15 @@ grant create file format on schema BANK_FRAUD_ANALYTICS.RAW to role ingest_role;
 
 grant role INGEST_ROLE to role TRANSFORM_ROLE;
 grant role BI_READ_ROLE to role TRANSFORM_ROLE;
+
+
+create or replace user DBT_SA
+password = 'Transform@4794'
+must_change_password = false
+default_role = 'transform_role'
+default_warehouse = 'transform_wh';
+
+grant role transform_role to user DBT_SA;
+
+alter user DBT_SA
+set disabled = false;
