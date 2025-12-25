@@ -26,6 +26,10 @@ grant select, insert on future tables in schema BANK_FRAUD_ANALYTICS.RAW to role
 grant select on all views in schema BANK_FRAUD_ANALYTICS.SECURE to role BI_READ_ROLE;
 grant select on future views in schema BANK_FRAUD_ANALYTICS.SECURE to role BI_READ_ROLE;
 
+grant create stage
+on schema BANK_FRAUD_ANALYTICS.RAW
+to role INGEST_ROLE;
+
 
 grant role INGEST_ROLE to role TRANSFORM_ROLE;
 grant role BI_READ_ROLE to role TRANSFORM_ROLE;
