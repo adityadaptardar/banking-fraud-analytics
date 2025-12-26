@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: secure_fact_card_transactions
+    description: "Secure BI-facing view for fraud analytics"
+
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+
+      - name: amount
+        tests:
+          - not_null
