@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: BANK_FRAUD_ANALYTICS
+    schema: RAW
+    tables:
+      - name: 'card_transactions'
+        description: "Raw card transaction feed loaded from S3"
